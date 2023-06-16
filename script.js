@@ -14,6 +14,8 @@ function checkTheFLoorSize(event) {
             console.log(`Floor ${index}`);
             event.preventDefault()
 
+            
+
             const parentDiv = document.createElement("div");
             parentDiv.classList.add("container-lift");
             parentDiv.appendChild(section)
