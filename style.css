@@ -1,0 +1,80 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: rgb(254, 254, 255);
+    background:linear-gradient(to right, rgb(211, 189, 189),rgb(178, 178, 202),rgb(188, 214, 188));
+}
+
+.container{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+}
+    
+input{
+    color: red;
+}
+
+section{
+    border: 1px solid black;
+    position: absolute;
+    width:100%;
+    top: 10%;
+   
+}
+
+.container-lift{
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    height: 25%;
+    display: flex;
+}
+
+.text-btn{
+    position: relative;
+    top:-20px;
+}
+
+.lift{
+    position: relative;
+    display: flex;
+    left: 200px;
+    bottom:-20px;
+    border: 1px solid rgb(34, 26, 26);
+    background-color: rgb(165, 42, 42);
+    height: 5rem;
+    width: 3rem;
+    padding: 10px;
+    margin: 50px;
+}
+
+.left-door {
+    position: absolute;
+    top: -1rem;
+    left: -1px;
+    justify-content: flex-start;
+    width: 2rem;
+    height: 100%;
+    background-color: rgb(15, 18, 20);
+    border: 2px solid blue;
+}
+
+.right-door{
+    position: absolute;
+    top: -1rem;
+    left: 34px;
+    justify-content: flex-end;
+    width: 2rem;
+    height: 100%;
+    background-color: rgb(57, 103, 145);
+    border: 2px solid blue;
+
+}
+
+
+
