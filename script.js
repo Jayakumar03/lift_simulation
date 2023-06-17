@@ -95,10 +95,6 @@ function generateLift(lifts) {
 
 function liftUpwardMovement(e) {
     e.preventDefault()
-    console.log(e.target.parentNode)
-
-
-
     
 }
 
