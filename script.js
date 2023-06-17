@@ -1,47 +1,108 @@
 const numberOfLift = document.getElementById("no-of-lift")
-const numberofFloor = document.getElementById("no-of-floor")
+const numberOfFloor = document.getElementById("no-of-floor")
 const generateBtn = document.getElementById("generate-btn")
-const section = document.getElementsByTagName("section")
+const sections = document.getElementsByTagName("section")
+const section = sections[0]
+let parentDiv ;
+
 
 
 // events listener
 
-generateBtn.addEventListener("click", checkTheFLoorSize)
+generateBtn.addEventListener("click", generateFLoorAndLift)
 
 
-function checkTheFLoorSize(event) {
-        for (let index = 0; index < numberofFloor.value; index++) {
+function generateFLoorAndLift(event) {
+    event.preventDefault()
+
+
+    numberOfFloor.value == "" ? alert("please input number of floor") : generateFloor(numberOfFloor.value )
+    numberOfLift.value == "" ? lift = alert("please input number of lift") : generateLift(numberOfLift.value )
+    
+
+
+}
+       
+
+
+
+
+
+
+
+
+function generateFloor(floors) {
+   
+
+     for (let index = floors; index >= 1; index--) {
+
             console.log(`Floor ${index}`);
-            event.preventDefault()
-
-            
 
             const parentDiv = document.createElement("div");
             parentDiv.classList.add("container-lift");
-            parentDiv.appendChild(section)
+            section.appendChild(parentDiv)
 
             const floorDiv = document.createElement("div") 
             floorDiv.classList.add("text-btn")
-            floorDiv.appendChild(parentDiv);
+            parentDiv.appendChild(floorDiv);
 
             const floorName =  document.createElement("h3")
             floorName.innerHTML = `Floor ${index}`
-            floorName.appendChild(floorDiv)
+            floorDiv.appendChild(floorName)
 
             const upButton = document.createElement("button")
             upButton.innerHTML = "Up"
-            upButton.appendChild(floorDiv)
+            floorDiv.appendChild(upButton)
 
             const downButton = document.createElement("button")
             downButton.innerHTML = "Down"
-            downButton.appendChild(floorDiv)
+            floorDiv.appendChild(downButton)
 
-
-           
-           
-           
-           
+            upButton.addEventListener("click", liftUpwardMovement)
+            downButton.addEventListener("click", liftDownwardMovement)
 
         }
 
+
+        parentDiv = document.getElementsByClassName("container-lift")
+    
+}
+
+function generateLift(lifts) {
+
+    for (let index = 1; index <= lifts; index++) {
+
+        console.log(`Lift ${index}`);
+
+        const parentDivLift = document.createElement("div");
+        parentDivLift.classList.add("lift");
+        parentDiv[4].appendChild( parentDivLift)
+
+        const leftDoor = document.createElement("p") 
+        leftDoor.classList.add("left-door")
+        parentDivLift.appendChild(leftDoor);
+
+        const rightDoor =  document.createElement("p")
+        rightDoor.classList.add("right-door")
+        parentDivLift.appendChild(rightDoor)
+
+    }
+
+
+}
+
+
+
+function liftUpwardMovement(e) {
+    e.preventDefault()
+    console.log(e.target.parentNode)
+
+
+
+    
+}
+function liftDownwardMovement(e) {
+    e.preventDefault()
+    console.log(e)
+    
 }
