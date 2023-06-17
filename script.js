@@ -101,6 +101,8 @@ function liftUpwardMovement(e) {
 
     
 }
+
+
 function liftDownwardMovement(e) {
     e.preventDefault()
     console.log(e)
